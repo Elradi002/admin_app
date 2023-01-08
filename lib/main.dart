@@ -1,4 +1,7 @@
+import 'package:admin_app/screens/admin_screens/admin_tabs_screen.dart';
+import 'package:admin_app/screens/doctor_screens/clinic_details_screen.dart';
 import 'package:admin_app/screens/doctor_screens/doctor_tabs_screen.dart';
+import 'package:admin_app/screens/doctor_screens/patient_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -25,19 +28,6 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  // @override
-  // void didChangeDependencies() {
-  //   getLocale().then((locale) => {setLocale(locale)});
-  //   super.didChangeDependencies();
-  // }
-
-  // @override
-  // void initState() {
-  //   Provider.of<ItemProvider>(context, listen: false).getFounds();
-  //   Provider.of<ItemProvider>(context, listen: false).getLosts();
-  //   super.initState();
-  // }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -61,7 +51,10 @@ class _MyAppState extends State<MyApp> {
       ],
       home: const DoctorTabsScreen(),
       routes: {
+        AdminTabsScreen.routeName: (context) => const AdminTabsScreen(),
         DoctorTabsScreen.routeName: (context) => const DoctorTabsScreen(),
+        PatientDetailsScreen.routeName: (context) => PatientDetailsScreen(),
+        ClinicDetailsScreen.routeName: (context) => const ClinicDetailsScreen(),
       },
     );
   }

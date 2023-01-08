@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 
 import '../../models/constants.dart';
 import '../../widgets/doctor_main_drawer.dart';
+import 'clinic_details_screen.dart';
 
 class ClinicsScreen extends StatelessWidget {
+  static const routeName = 'clinics-screen';
   List<ClinicInfo> clinicDummyData = [
     ClinicInfo(name: 'عيادة الامل', place: 'مدني'),
     ClinicInfo(name: 'عيادة الامل', place: 'مدني'),
@@ -33,10 +35,9 @@ class ClinicsScreen extends StatelessWidget {
           itemBuilder: (ctx, index) {
             return InkWell(
               onTap: () {
-                // Navigator.of(context).pushNamed(
-                //   FoundItemDetailsScreen.routeName,
-                //   arguments: index,
-                // );
+                Navigator.of(context).pushNamed(
+                  ClinicDetailsScreen.routeName,
+                );
               },
               child: Container(
                 decoration:

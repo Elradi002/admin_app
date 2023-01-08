@@ -21,8 +21,14 @@ class UsersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        elevation: 0,
         centerTitle: true,
-        title: const Text('المستخدمين'),
+        title: const Text(
+          'المستخدمين',
+          style: kXLargeTittle,
+        ),
+        iconTheme: IconThemeData(color: Colors.teal),
       ),
       drawer: const AdminMainDrawer(),
       body: Padding(

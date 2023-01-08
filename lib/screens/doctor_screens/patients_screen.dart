@@ -1,4 +1,5 @@
 import 'package:admin_app/models/patient_info.dart';
+import 'package:admin_app/screens/doctor_screens/patient_details_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../models/constants.dart';
@@ -58,10 +59,10 @@ class PatientsScreen extends StatelessWidget {
                   itemBuilder: (ctx, index) {
                     return InkWell(
                       onTap: () {
-                        // Navigator.of(context).pushNamed(
-                        //   FoundItemDetailsScreen.routeName,
-                        //   arguments: index,
-                        // );
+                        Navigator.of(context).pushNamed(
+                          PatientDetailsScreen.routeName,
+                          arguments: index,
+                        );
                       },
                       child: Container(
                         decoration: BoxDecoration(

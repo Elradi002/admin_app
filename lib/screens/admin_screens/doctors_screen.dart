@@ -45,8 +45,14 @@ class DoctorsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        elevation: 0,
         centerTitle: true,
-        title: const Text('الاطباء'),
+        title: const Text(
+          'الاطباء',
+          style: kXLargeTittle,
+        ),
+        iconTheme: IconThemeData(color: Colors.teal),
       ),
       drawer: const AdminMainDrawer(),
       body: Padding(
@@ -72,10 +78,30 @@ class DoctorsScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          doctorDummyData[index].name,
-                          overflow: TextOverflow.ellipsis,
-                          style: kLargeTittle,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              doctorDummyData[index].name,
+                              overflow: TextOverflow.ellipsis,
+                              style: kLargeTittle,
+                            ),
+                            SizedBox(
+                              height: 30,
+                              width: 80,
+                              child: MaterialButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                shape: const StadiumBorder(),
+                                color: Colors.amber[600],
+                                child: const Text(
+                                  'تعطيل',
+                                  style: kButtonTheme,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                         const SizedBox(
                           height: 10,
@@ -128,8 +154,6 @@ class DoctorsScreen extends StatelessWidget {
                             ),
                             InkWell(
                               onTap: () {
-                                //ccc
-
                                 showDialog(
                                     context: context,
                                     builder: (context) {
@@ -257,12 +281,10 @@ class DoctorsScreen extends StatelessWidget {
                                         ],
                                       );
                                     });
-
-                                //cccc
                               },
                               child: const Icon(
                                 Icons.delete,
-                                color: Colors.grey,
+                                color: Colors.red,
                               ),
                             )
                           ],

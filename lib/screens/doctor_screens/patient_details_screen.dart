@@ -2,21 +2,26 @@ import 'package:admin_app/models/constants.dart';
 import 'package:flutter/material.dart';
 
 class PatientDetailsScreen extends StatelessWidget {
+  static const routeName = 'patient-details-screen';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.teal),
+        elevation: 0,
+        centerTitle: true,
+        title: const Text(
+          'بيانات المريض',
+          style: kXLargeTittle,
+        ),
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Center(
-                child: Text(
-                  'بيانات المريض',
-                  style: kXLargeTittle,
-                ),
-              ),
               const SizedBox(height: 15),
               Card(
                 child: Padding(
@@ -25,32 +30,32 @@ class PatientDetailsScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text(
-                        'الاسم : ',
+                        'الاسم : ادم محمد مدني',
                         style: kLargeTittle,
                       ),
                       SizedBox(height: 15),
                       Text(
-                        'السكن : ',
+                        'السكن : ام درمان',
                         style: kLargeTittle,
                       ),
                       SizedBox(height: 15),
                       Text(
-                        'رقم الهاتف : ',
+                        'رقم الهاتف : 0909095675',
                         style: kLargeTittle,
                       ),
                       SizedBox(height: 15),
                       Text(
-                        'نوع الحجز : ',
+                        'نوع الحجز : مباشر ',
                         style: kLargeTittle,
                       ),
                       SizedBox(height: 15),
                       Text(
-                        'زمن الحجز : ',
+                        'زمن الحجز : 8-10 PM ',
                         style: kLargeTittle,
                       ),
                       SizedBox(height: 15),
                       Text(
-                        'العيادة :',
+                        ' العيادة : المسائية',
                         style: kLargeTittle,
                       ),
                     ],
@@ -70,12 +75,15 @@ class PatientDetailsScreen extends StatelessWidget {
                 margin: const EdgeInsets.all(10),
                 padding: const EdgeInsets.all(10),
                 width: 180,
-                height: 100,
+                height: 110,
                 child: const Text(
-                  ' ملحوظة .....',
+                  'كان الادمان بالنسبة لي هو كل شيء في حياتي، ولكننى لم أكن سعيداً بحياتي، وكلما كنت اشعر باليأس أكثر، كنت أقوم بتعاطي المخدرات لنسيان ما كنت أشعر به، ولكنني اتساءل الان، هل كانت تلك الطريقة الصحيحة للتعامل مع هذه المشاعر السلبية؟',
                   style: kDetailsText,
                 ),
-              )
+              ),
+              const SizedBox(
+                height: 10,
+              ),
             ],
           ),
         ),
