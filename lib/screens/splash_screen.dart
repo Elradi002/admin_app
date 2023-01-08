@@ -12,7 +12,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, '/tabs-screen');
+      Navigator.pushReplacementNamed(context, '/sign_in');
     });
     super.initState();
   }

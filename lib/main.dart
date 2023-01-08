@@ -2,9 +2,10 @@ import 'package:admin_app/screens/admin_screens/admin_tabs_screen.dart';
 import 'package:admin_app/screens/doctor_screens/clinic_details_screen.dart';
 import 'package:admin_app/screens/doctor_screens/doctor_tabs_screen.dart';
 import 'package:admin_app/screens/doctor_screens/patient_details_screen.dart';
+import 'package:admin_app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-
+import './screens/splash_screen.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
@@ -49,8 +50,9 @@ class _MyAppState extends State<MyApp> {
         Locale('ar', ''),
         //Locale('en', ''), // English, no country code
       ],
-      home: const DoctorTabsScreen(),
+      home: const SplashScreen(),
       routes: {
+        LoginScreen.routeName:(context) => const LoginScreen(),
         AdminTabsScreen.routeName: (context) => const AdminTabsScreen(),
         DoctorTabsScreen.routeName: (context) => const DoctorTabsScreen(),
         PatientDetailsScreen.routeName: (context) => PatientDetailsScreen(),

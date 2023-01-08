@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import './admin_screens/admin_tabs_screen.dart';
+import './doctor_screens/doctor_tabs_screen.dart';
 import '../models/constants.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -107,6 +108,12 @@ class _LoginScreenState extends State<LoginScreen> {
           const SizedBox(height: 20),
           MaterialButton(
             onPressed: () {
+              if(_nameController.text == 'admin'){
+                Navigator.pushNamed(context, AdminTabsScreen.routeName);
+              }else{
+                Navigator.pushNamed(context, DoctorTabsScreen.routeName);
+              }
+
               // if (_key.currentState != null && _key.currentState!.validate()) {
               //   context
               //       .read<ItemProvider>()

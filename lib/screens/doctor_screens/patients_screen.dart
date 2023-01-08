@@ -86,7 +86,7 @@ class PatientsScreen extends StatelessWidget {
                                 Text(
                                   ' العمر :${patientDummyData[index].age}',
                                   style: const TextStyle(
-                                      color: Colors.grey, fontSize: 16),
+                                      color: Colors.redAccent, fontSize: 16),
                                 ),
                                 const SizedBox(height: 10),
                                 Text(

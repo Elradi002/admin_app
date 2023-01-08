@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/constants.dart';
+import '../screens/login_screen.dart';
 import 'LanguageIcon.dart';
 
 class DoctorMainDrawer extends StatelessWidget {
@@ -231,7 +232,7 @@ class DoctorMainDrawer extends StatelessWidget {
                           width: 100,
                           child: MaterialButton(
                             onPressed: () {
-                              Navigator.pop(context);
+                              Navigator.pushNamed(context, LoginScreen.routeName);
                             },
                             shape: const StadiumBorder(),
                             color: Theme.of(context).colorScheme.secondary,
